@@ -14,5 +14,6 @@ for (Char = 48; Char <= 57; Char++)
 {
 putchar(Char);
 }
+putchar('\n');
 return (0);
 }
