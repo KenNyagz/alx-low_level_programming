@@ -9,12 +9,11 @@
 
 int main(void)
 {
-printf({1..9{)
+int n;
+for(n == 0; n < 10; c++)
+printf("%d", n); 
 
-
-
-
-
+return (0);
 
 
 }
