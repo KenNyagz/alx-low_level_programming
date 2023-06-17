@@ -16,8 +16,11 @@
    {
      putchar(i);
      putchar(j);
+     putchar(',');
+     putchar(' ');
    }
    }
+putchar('\n');
  return (0);
  }
 
