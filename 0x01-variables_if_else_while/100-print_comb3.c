@@ -1,4 +1,4 @@
-#include <stdlib.h>
+i#include <stdlib.h>
 #include <stdio.h>
 
  /**
@@ -14,13 +14,18 @@
  {
    for (j = 49; j <= 57; j++)
    {
-     putchar(i);
-     putchar(j);
-     putchar(',');
-     putchar(' ');
+    if (i = j)
+      {
+       
+       putchar(i);
+       putchar(j);
+       putchar(',');
+       putchar(' ');
+     
+      }
    }
-   }
-putchar('\n');
+ putchar('\n');
  return (0);
- }
 
+ }
+}
