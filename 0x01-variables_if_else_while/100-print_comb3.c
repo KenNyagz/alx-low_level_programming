@@ -15,15 +15,19 @@ for (i = 48; i <= 57; i++)
 {
   for (j = 49; j <= 57; j++)
   {
-    if (i != j)
-    {
-      for (i = 49; i <= 57; i++)
-      {     
-        putchar(i);
-        putchar(j);
-        putchar(',');
-        putchar(' ');
+    if (i = j)
     
+    {
+      for (i = 48; i <= 57; i++)
+      {
+	if (i == j)
+	continue;
+        {     
+          putchar(i);
+          putchar(j);
+          putchar(',');
+          putchar(' ');
+        }
       }
     }
  }
