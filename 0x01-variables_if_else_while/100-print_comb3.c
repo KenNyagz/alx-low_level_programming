@@ -19,6 +19,8 @@ if (i != j)
 {
 putchar(i);
 putchar(j);
+if (i == 56 && j == 57)
+continue;
 putchar(',');
 putchar(' ');
 }
