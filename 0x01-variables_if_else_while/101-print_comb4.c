@@ -22,7 +22,7 @@ for (k = j + 1; k < 58; k++)
 putchar(i);
 putchar(j);
 putchar(k);
-if(i==55 && j==56 && k==57)
+if (i == 55 && j == 56 && k == 57)
 break;
 putchar(',');
 putchar(' ');
@@ -30,5 +30,5 @@ putchar(' ');
 }
 }
 putchar('\n');
-return 0;
+return (0);
 }
