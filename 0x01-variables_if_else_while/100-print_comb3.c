@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 /**
 *main - enrty point
@@ -15,7 +16,7 @@ for (i = 48; i <= 57; i++)
 {
   for (j = 49; j <= 57; j++)
   {
-    if ((i) = j)
+    if (i != j)
     
     {
       for (i = 48; i <= 57; i++)
