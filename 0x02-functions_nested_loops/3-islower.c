@@ -6,7 +6,7 @@
 *
 */
 
-int _islower(int c);
+int _islower(int c)
 {
 /**
 *_islower: check for alphabet case
