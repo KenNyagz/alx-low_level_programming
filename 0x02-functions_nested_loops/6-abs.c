@@ -6,9 +6,9 @@
 *Return: i or i negated if negative number
 */
 
-int _abs(int)
+int _abs(int i)
 {
-int i;
+
 if (i < 0)
 {
 i = (i * -1);
