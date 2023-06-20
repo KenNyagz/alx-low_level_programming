@@ -8,6 +8,11 @@
 */
 
 void print_alphabet(void)
+/**
+*add C
+*
+*Return: void
+*/
 {
 char c;
 for (c = 97; c <= 122; c++)
