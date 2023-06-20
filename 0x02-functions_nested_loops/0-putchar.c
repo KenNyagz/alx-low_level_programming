@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
-4 *main -entry point
-5 *printing putchar
-6 *Return: Always 0
-7 */
+ *main -entry point
+ *printing putchar
+ *Return: Always 0
+ */
 
 int main(void)
 {
@@ -16,6 +16,6 @@ putchar('c');
 putchar('h');
 putchar('a');
 putchar('r');
-
+putchar('\n');
 return (0);
 }
