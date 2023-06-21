@@ -2,6 +2,7 @@
 
 /**
 * main - causes an infinite loop
+*@i- int being tested
 * Return: 0
 */
 
