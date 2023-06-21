@@ -28,7 +28,7 @@ case 6:
 day = 151 + day;
 break;
 case 7:
-day = 181 + day;
+day = 180 + day;
 break;
 case 8:
 day = 212 + day;
