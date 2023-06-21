@@ -15,7 +15,7 @@ i =  i * -1;
 j = (i % 10);
 
 if (j < 10)
-j = j * -1;
+i = j * -1;
 _putchar(i + '0');
 return (i);
 }
