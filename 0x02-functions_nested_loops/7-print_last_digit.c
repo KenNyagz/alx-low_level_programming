@@ -14,8 +14,6 @@ if (i < 0)
 i =  i * -1;
 j = (i % 10);
 
-if (j < 10)
-i = j * -1;
-_putchar(i + '0');
-return (i);
+_putchar(j + '0');
+return (j);
 }
