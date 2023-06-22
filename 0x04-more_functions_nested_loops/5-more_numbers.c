@@ -21,7 +21,7 @@ _putchar(j + '0');
 _putchar(k + '0');
 if (j == 1 && k == 4)
 continue;
-_putchar(',');
+
 }
 l++;
 _putchar('\n');
