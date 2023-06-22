@@ -1,1 +1,1 @@
-Now learning C. Learning programming begins
+Now begins programming training. Starting C
