@@ -10,19 +10,18 @@ void more_numbers(void)
 int i, j, k;
 int l = 0;
 
-while (l<10)
+while (l < 10)
 {
-for (i = 0; i <= 14; i ++)
+for (i = 0; i <= 14; i++)
 {
-j = i/10;
-k = i%10;
+j = i / 10;
+k = i % 10;
 if (j > 0)
 _putchar(j + '0');
 _putchar(k + '0');
-if(j == 1 && k == 4 )
+if (j == 1 && k == 4)
 continue;
-_putchar(',');    
-
+_putchar(',');
 }
 l++;
 _putchar('\n');
