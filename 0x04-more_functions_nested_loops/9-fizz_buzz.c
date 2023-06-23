@@ -31,6 +31,6 @@ printf("%d ", i);
 }
 
 }
-printf("%c", '\n');
+printf("%c ", '\n');
 return (0);
 }
