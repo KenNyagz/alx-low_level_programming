@@ -1,12 +1,11 @@
 #include "main.h"
-#include "_putchar.c"
+#include <stdio.h>
 
 /**
-*main - entry point
-*Print 0-100 ,FizzBuzz on mulitples of 15;
-*Fizz on multiples of 3;
-*Buzz on multiples of 5.
-*Return: 0
+*main -entry point
+*print 1-100 but print fizz on multples of 3
+*print buzz on multiples of 5 and FizzBuzz on multiples of both
+*Return: O
 */
 
 int main(void)
@@ -16,32 +15,22 @@ for (i = 1; i <= 100; i++)
 {
 if (i % 15 == 0)
 {
-_putchar('F');
-_putchar('i');
-_putchar('z');
-_putchar('z');
-_putchar('B');
-_putchar('u');
-_putchar('z');
-_putchar('z');
+printf("FizzBuzz");
+printf(" ");
 }
 else if (i % 3 == 0)
 {
-_putchar('F');
-_putchar('i');
-_putchar('z');
-_putchar('z');
+printf("Fizz");
+printf(" ");
 }
 else if (i % 5 == 0)
 {
-_putchar('B');
-_putchar('u');
-_putchar('z');
-_putchar('z');
+printf("Buzz");
+printf(" ");
 }
 else
-_putchar(i + '0');
+printf("%d",i);
+printf(" ");
 }
-_putchar('\n');
 return (0);
 }
