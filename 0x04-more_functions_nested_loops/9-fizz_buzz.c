@@ -32,5 +32,6 @@ else
 printf("%d", i);
 printf(" ");
 }
+printf("%c", '\n');
 return (0);
 }
