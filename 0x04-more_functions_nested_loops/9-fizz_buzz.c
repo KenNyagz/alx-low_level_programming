@@ -29,7 +29,7 @@ printf("Buzz");
 printf(" ");
 }
 else
-printf("%d",i);
+printf("%d", i);
 printf(" ");
 }
 return (0);
