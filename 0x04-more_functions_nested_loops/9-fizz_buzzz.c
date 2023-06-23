@@ -49,3 +49,7 @@ _putchar(' ');
 _putchar('\n');
 return (0);
 }
+
+/*This code requires extra steps of converting multiple
+place value into chars,since char only has digit values 
+of upto 9*/ 
