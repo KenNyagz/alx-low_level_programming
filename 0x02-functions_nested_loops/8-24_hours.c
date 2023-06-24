@@ -24,10 +24,11 @@ _putchar(j + '0');
 _putchar (':');
 _putchar(k + '0');
 _putchar(l + '0');
+
 _putchar('\n');
 }
 }
-_putchar('\n');
+
 
 }
 
