@@ -8,12 +8,12 @@
 
 void jack_bauer(void)
 {
-int f, i, j, k, l, m;
+int i, m;
 for (i = 0; i < 24; i++)
 {
 for (m = 0; m < 60; m++)
 {
-
+int f, j, k, l;
 k = m / 10;
 l = m % 10;
 f = i / 10;
