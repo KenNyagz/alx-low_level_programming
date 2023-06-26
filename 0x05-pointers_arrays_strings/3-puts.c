@@ -1,9 +1,9 @@
 #include "main.h"
 
-/*
+/**
 *_puts - printsa  string followed by a new line to stdout
 *@str: the string
-*Return: 
+*Return: void
 */
 
 void _puts(char *str)
