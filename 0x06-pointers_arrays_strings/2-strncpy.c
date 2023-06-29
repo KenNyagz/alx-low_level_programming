@@ -2,9 +2,10 @@
 
 /**
 * *_strncpy - Copies one string onto another
-*@dest : the string being copied to(overwritten)
+*@dest: the string being copied to(overwritten)
 *@src: the string being copied
-*return: char *dest
+*@n: chars from src to be written to dest
+*Return: char *dest
 */
 
 char *_strncpy(char *dest, char *src, int n)
@@ -14,7 +15,7 @@ int j = 0;
 
 while (src[i] != '\0' && n > 0)
 {
-dest[j] = src [i];
+dest[j] = src[i];
 i++;
 j++;
 n--;
