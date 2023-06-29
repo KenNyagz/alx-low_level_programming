@@ -15,6 +15,9 @@ if (*s1 < *s2)
 return (15);
 else if (*s1 > *s2)
 return  (-15);
+
+s1++;
+s2++;
 }
 return (0);
 }
