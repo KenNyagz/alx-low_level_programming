@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* * _memset - fills memory with a constant byte
+*  _memset - fills memory with a constant byte
 *@s: the memroy block(of chars
 *@b: the char byte being filled constantly
 *@n: number of bytes being filled
