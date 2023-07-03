@@ -1,7 +1,8 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
-*_strpbk - searches a string for a set of bytes
+*_strpbrk - searches a string for a set of bytes
 *@s: the string to be searched
 *@accept: the string to be searched for
 *Return: *s
@@ -21,5 +22,5 @@ return (&s[i]);
 }
 }
 
-return (s);
+return (NULL);
 }
