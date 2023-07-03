@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include "_putchar.c"
 
 /**
 *_strchr - prints the first occurence of a char onwards
@@ -10,16 +10,13 @@
 
 char *_strchr(char *s, char c)
 {
-while (*s != '\0')
-{
+while (*s != c)
+s++;
 if (*s == c)
 {
-return (s);
-}
-else if (*(s + 1) == c)
-
-return (s + 1);
+_putchar(*s);
 s++;
 }
-return (s + 1);
+return (s);
+
 }
