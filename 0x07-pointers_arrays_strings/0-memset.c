@@ -5,7 +5,7 @@
 *@s: the memroy block(of chars
 *@b: the char byte being filled constantly
 *@n: number of bytes being filled
-*Return: char *s
+*Return: s
 */
 
 char *_memset(char *s, char b, unsigned int n)
