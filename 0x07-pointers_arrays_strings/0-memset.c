@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-*  _memset - fills memory with a constant byte
-*@s: the memroy block(of chars
-*@b: the char byte being filled constantly
-*@n: number of bytes being filled
-*Return: s
+* *_ memset - Fills memory with a constant byte.
+*@s: the memory block of chars.
+*@b: the constant char byte being filled
+*@n: number of bytes being filled.
+*Return: pointer to the memory area *s
 */
 
 char *_memset(char *s, char b, unsigned int n)
