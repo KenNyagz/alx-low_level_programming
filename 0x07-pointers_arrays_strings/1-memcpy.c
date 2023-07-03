@@ -14,17 +14,17 @@ unsigned int i;
 for (i = 0; i < n; i++)
 {
  
-if (src[i] !=  '\0' && i <= n)
-{
 
-if (dest[i] != '\0')
-{
+
+
+
+
 dest[i] = src[i];
-dest++;
-src++;
+
+
+
 }
-}
-}
+
 return (dest);
 
 }
