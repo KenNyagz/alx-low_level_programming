@@ -8,9 +8,26 @@
 
 int _sqrt_recursion(int n)
 {
-if (n == 0)
+
+return (ntrl_sqrt(n, 1));
+
+}
+
+/**
+*ntrl_sqrt - finds natural square root of a number
+*@n: the base number
+*@i: number to check natutal square root
+*Return: natural square root
+*/
+
+int ntrl_sqrt(int n, int i)
+{
+int sq = i * i;
+if (sq > n)
 return (-1);
 
-if (
+if (sq == n)
+return (i);
 
+return (ntrl_sqrt(n, i + 1));
 }
