@@ -10,3 +10,4 @@ int ntrl_sqrt(int n, int i);
 
 int is_prime_number(int n);
 int prime(int n, int i);
+int is_palindrome(char *s);
