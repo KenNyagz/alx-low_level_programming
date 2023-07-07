@@ -1,7 +1,5 @@
 #include "main.h"
-#include "_putchar.c"
 #include <stdio.h>
-#include <string.h>
 
 /**
 *main -entry point
@@ -13,13 +11,9 @@
 
 int main(int argc, char *argv[])
 {
-
-unsigned long int j;
 (void) argc;
+printf("%s\n", argv[0]);
 
-for (j = 0; j < strlen(argv[0]); j++)
-_putchar(*argv[0]);
-_putchar('\n');
 return (0);
 
 }
