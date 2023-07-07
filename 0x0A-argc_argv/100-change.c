@@ -44,8 +44,10 @@ cents -= 2;
 coins++;
 }
 else
+{
 cents--;
 coins++;
+}
 }
 printf("%d\n", coins);
 return (0);
