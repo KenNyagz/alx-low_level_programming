@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include "_putchar.c"
 
 /**
 *main - entry point
@@ -13,7 +12,6 @@
 int main(int argc, char *argv[])
 {
 int i;
-(void)argc;
 
 for (i = 0; i < argc; i++)
 {
