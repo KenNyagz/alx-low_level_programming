@@ -9,7 +9,7 @@
 */
 int main(int argc, char *argv[])
 {
-int coins, cents = 0;
+int coins = 0, cents = 0;
 if (argc != 2)
 {
 printf("Error\n");
@@ -44,10 +44,8 @@ cents -= 2;
 coins++;
 }
 else
-{
 cents--;
-
-}
+coins++;
 }
 printf("%d\n", coins);
 return (0);
