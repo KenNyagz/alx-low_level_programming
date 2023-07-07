@@ -22,6 +22,8 @@ if (cents < 0)
 printf("0\n");
 return (0);
 }
+
+coins = 0;
 while (cents > 0)
 {
 if (cents >= 25)
