@@ -7,7 +7,7 @@
 *Multiplies two numbers
 *@argc: number of command line arguments
 *@argv: array of command line arguments
-*Return: 0 
+*Return: 0
 */
 
 int main(int argc, char *argv[])
@@ -25,6 +25,6 @@ else
 i = atoi(argv[1]);
 j = atoi(argv[2]);
 
-printf("%d\n", (i*j));
+printf("%d\n", (i *j));
 return (0);
 }
