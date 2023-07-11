@@ -29,7 +29,7 @@ if (s3 == NULL)
 return (NULL);
 
 strcpy(s3, s1);
-strcpy(s3, s2);
+strcat(s3, s2);
 
 return (s3);
 }
