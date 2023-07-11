@@ -1,5 +1,3 @@
-#include "main.h"
-#include <stdlib.h>
 #include <string.h>
 
 /**
@@ -24,7 +22,7 @@ i++;
 while (s2[j])
 j++;
 
-s3 = malloc(( + j + 1) * sizeof(char));
+s3 = (char *) malloc((i + j + 1) * sizeof(char));
 if (s3 == NULL)
 return (NULL);
 
