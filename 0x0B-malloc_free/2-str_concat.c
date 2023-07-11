@@ -24,7 +24,7 @@ i++;
 while (s2[j])
 j++;
 
-s3 = malloc((strlen(s1) + strlen(s2) + 1) * sizeof(char));
+s3 = malloc(( + j + 1) * sizeof(char));
 if (s3 == NULL)
 return (NULL);
 
