@@ -15,7 +15,7 @@ char *p = malloc(size * sizeof(char));
 
 if (p == 0)
 return (NULL);
-if (!p)
+if (p == NULL)
 return (NULL);
 
 for (i = 0; i < size; i++)
