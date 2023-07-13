@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <string.h>
 
 /**
 *calloc - alloacates memory for an array
@@ -18,7 +18,7 @@ return (NULL);
 if (ptr == NULL)
 return (NULL);
 
-memset(ptr, 0, nmemb, size);
+memset(ptr, 0, nmemb * size);
 
 return (ptr);
 }
