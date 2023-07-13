@@ -25,9 +25,8 @@ if (ptr == NULL)
 return (NULL);
 
 a = ptr;
-for (i = 0; i < size; i++)
+for (i = 0; i < (nmemb * size); i++)
 a[i] = '\0';
-
 
 return (ptr);
 }
