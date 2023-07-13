@@ -27,7 +27,7 @@ s2_len = strlen(s2);
 if (n > s2_len)
 n = s2_len;
 
-s3 = malloc(s1_len + n +1);
+s3 = malloc(s1_len + n + 1);
 
 if (s3 == NULL)
 return (NULL);
