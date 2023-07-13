@@ -4,7 +4,7 @@
 /**
 *malloc_checked - allocates memory
 *@b: bytes to be allocated
-*Return: void
+*Return: area of memory reserved
 */
 
 void *malloc_checked(unsigned int b)
