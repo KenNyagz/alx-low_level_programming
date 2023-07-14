@@ -18,10 +18,9 @@ return (ptr);
 
 if (ptr == NULL)
 {
-
 return (malloc(new_size));
 }
-if (new_size == 0 && ptr != NULL)
+if (new_size == 0)
 {
 free(ptr);
 return (NULL);
