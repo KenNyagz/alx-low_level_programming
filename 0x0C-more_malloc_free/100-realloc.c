@@ -18,8 +18,8 @@ return (ptr);
 
 if (ptr == NULL)
 {
-old_size = sizeof(malloc(new_size));
-new_size = sizeof(malloc(new_size));
+
+return (malloc(new_size));
 }
 if (new_size == 0 && ptr != NULL)
 {
@@ -31,6 +31,3 @@ free(ptr);
 
 return (new_ptr);
 }
-
-
-
