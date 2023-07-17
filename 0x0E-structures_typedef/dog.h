@@ -5,7 +5,7 @@
 *@name: First member
 *@age: second member
 *@owner: third member
-*Description: 
+*Description:
 */
 
 struct dog
@@ -14,6 +14,6 @@ char *name;
 float age;
 char *owner;
 
-}my_dog;
+} my_dog;
 
 #endif
