@@ -30,7 +30,7 @@ return (NULL);
 new_ptr = malloc(new_size);
 if (new_ptr != NULL)
 {
-/*Ccopy the contents of old block to new block*/
+/*Copy the contents of old block to new block*/
 memcpy(new_ptr, ptr, (old_size < new_size) ? old_size : new_size);
 free(ptr);
 /* Got this from chatgpt*/
