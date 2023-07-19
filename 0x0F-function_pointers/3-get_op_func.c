@@ -1,28 +1,17 @@
 #include <stdlib.h>
-#include "3-calc.h"
 #include <string.h>
+#include "3-calc.h"
 
 /**
-*get_up_func - returns a pointer to an operation function
+*get_op_func - returns a pointer to an operation function
 *@s: operation specifier
-*@a: first int for mathematical operation
-*@b: second int for mathematical operation
+* first int for mathematical operation
+*second int for mathematical operation
 *Return: Pointer to function with operation definition
 */
 
 int (*get_op_func(char *s))(int a, int b)
 {
-
-/**
-*ops[] - struct with fuction pointers
-*@+: first operation with identifier
-*@-: second operation with identifier
-*@*: third operation with identifier
-*@/: fourth operation with identifier
-*@%: fifth operation with identifier
-*@NULL: Return NULL for no matching identifier
-*Description: struct of function pointer with their identifiers
-*/
 
 op_t ops[] = {
 {"+", op_add},
