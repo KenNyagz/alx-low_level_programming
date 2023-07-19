@@ -9,13 +9,13 @@
 *Return: void
 */
 
-void f(char *name)
+/*void f(char *name)
 {
 while (name)
 {
 printf("%s\n", name);
 }
-}
+}*/
 
 /**
 *print_name - prints a name
@@ -27,5 +27,4 @@ printf("%s\n", name);
 void print_name(char *name, void (*f)(char *))
 {
 f(name);
-
 }
