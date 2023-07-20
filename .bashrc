@@ -97,3 +97,7 @@ fi
 #if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 #    . /etc/bash_completion
 #fi
+
+alias push='git commit -a -m "An aliased Commit to save time";git push'
+alias stt='git status'
+alias ex='chmod a+x '
