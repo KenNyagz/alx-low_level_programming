@@ -1,68 +1,53 @@
-#include <stdlib.h>
+#include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-#include <string.h>
-#include "variadic_functions.h"
 
 /**
-*print_all - function that prints anything
-*@format: list of types of args passed to func
-*@... : additional funtions
-*Return: Void
-*/
+  *print_all - function that prints anything.
+  *
+  *@format:list of types of arguments passed to the function
+  *
+  *Return: Nothing
+  */
 
 void print_all(const char * const format, ...)
 {
-int i, j;
-float k;
-char l;
-char *s;
-int len;
-va_list args;
-va_start(args, format);
+	va_list args;
+	unsigned int i;
+	char *s, *separator;
 
-len = strlen(format); 
+	va_start(args, format);
 
-i = 0;
+	separator = "";
 
-while (i < len)
-{
+	i = 0;
 
-if (format[i] == 'i')
-{
-j = va_arg(args, int);
-printf("%d", j);
-}
-
-if (format[i] == 'f')
-{
-k = va_arg(args, double);
-printf("%f", k);
-}
-
-if (format[i] == 'c')
-{
-l = va_arg(args, int);
-printf("%c", l);
-}
-
-if (format[i] == 's')
-{
-s = va_arg(args, char *);
-printf("%s", s);
-}
-
-if (format == NULL)
-printf("(nil)");
-
-while (i < len -1)
-{
-printf(", ");
-break;
-}
-
-i++;
-}
-va_end(args);
-printf("\n");
+	while (format && (format[i] != '\0'))
+	{
+		switch (format[i])
+		{
+			case 'c':
+				printf("%s%c", separator, va_arg(args, int));
+				break;
+			case 'i':
+				printf("%s%d", separator, va_arg(args, int));
+				break;
+			case 'f':
+				printf("%s%f", separator, va_arg(args, double));
+				break;
+			case 's':
+				s = va_arg(args, char *);
+				if (s == NULL)
+					s = "(nil)";
+				printf("%s%s", separator, s);
+				break;
+			default:
+				i++;
+				continue;
+		}
+		separator = ", ";
+		i++;
+	}
+	printf("\n");
+	va_end(args);
 }
