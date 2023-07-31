@@ -3,7 +3,7 @@
 /**
 *free_list - frees memory occupied by struct listint_s
 *@head: point to linked list, first element
-*
+*Return: Void
 */
 
 void free_listint2(listint_t **head)
