@@ -16,7 +16,7 @@ return (0);
 
 extracted = (*head)->n;
 
-current = *head->next;
+current = (*head)->next;
 free(*head);
 *head = current;
 
