@@ -2,8 +2,8 @@
 
 /**
 *add_nodeint - adds node to the beginning of a list
-*@head:
-*@n: 
+*@head: pointer to first list element's address
+*@n: data to input to new node
 *Return: pointer to node created
 */
 
