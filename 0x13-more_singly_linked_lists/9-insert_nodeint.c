@@ -18,14 +18,22 @@ newnode = malloc(sizeof(listint_t));
 if (newnode == NULL)
 return (NULL);
 
+if (idx == 0)
+{
+current->next = newnode;
+newnode->next = *head;
+newnode->n = n;
+*head = newnode;
+}
 
 while (newnode != NULL && i < idx)
 {
-current = current->next;
 if (current == NULL)
 return (NULL);
+current = current->next;
 i++;
 }
+
 newnode->n = n;
 newnode->next =  current->next;
 current->next = newnode;
