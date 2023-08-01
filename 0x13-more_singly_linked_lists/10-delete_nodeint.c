@@ -13,14 +13,17 @@ size_t i = 0;
 listint_t *nextnode, *nownode;
 listint_t *current = *head;
 
+if (*head == NULL)
+return (-1);
+
 if (index == 0)
 {
 *head = current->next;
 free(current);
-return (0);
+return (1);
 }
 
-while (current != NULL && i < (index - 1))
+while (i < (index - 1) && current != NULL)
 {
 current = current->next;
 i++;
@@ -30,7 +33,11 @@ return (-1);
 
 nownode = current;
 nextnode = current->next->next;
+if (nextnode == NULL)
+nownode->next = NULL;
+else
 nownode->next = nextnode;
+
 free(current);
-return (0);
+return (1);
 }
