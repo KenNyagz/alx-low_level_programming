@@ -13,7 +13,7 @@ size_t looped_listint_x(const listint_t *head)
 size_t count = 1;
 listint_t *slow, *fast;
 
-if (head == NULL || head->next == NULL )
+if (head == NULL || head->next == NULL)
 return (0);
 
 slow = head->next;
@@ -37,7 +37,6 @@ while (fast)
 		}
 		return (count);
 	}
-		
 	slow = slow->next;
 	fast = (fast->next)->next;
 }
