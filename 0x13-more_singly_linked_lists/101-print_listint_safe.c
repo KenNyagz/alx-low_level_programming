@@ -25,7 +25,7 @@ if (slow == fast)
 printf("->  [%p] %d\n", (void *)fast->next, fast->next->n);
 printf("->  [%p] %d\n", (void *)fast->next->next, fast->next->next->n);
 
-exit (98);
+exit(98);
 }
 
 }
