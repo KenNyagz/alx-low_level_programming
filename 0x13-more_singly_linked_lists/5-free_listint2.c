@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
-*free_list - frees memory occupied by struct listint_s
+*free_listint2 - frees memory occupied by struct listint_s
 *@head: point to linked list, first element
 *Return: Void
 */
