@@ -20,10 +20,15 @@ return (NULL);
 
 if (idx == 0)
 {
+/*newnode = malloc(sizeof(listint_t));*/
+if (newnode == NULL)
+return (NULL);
+
 current->next = newnode;
 newnode->next = *head;
 newnode->n = n;
 *head = newnode;
+return (newnode);
 }
 
 while (current != NULL && i < idx)
