@@ -20,20 +20,23 @@ newnode = malloc(sizeof(listint_t));
 if (newnode == NULL)
 return (NULL);
 
-newnode->next = *head;
 newnode->n = n;
+newnode->next = *head;
 *head = newnode;
 return (newnode);
 }
 
-while (current != NULL && i < idx)
+while (current != NULL && i < idx - 1)
 {
 current = current->next;
 i++;
 }
 
-newnode = malloc(sizeof(listint_t));
 if (current == NULL)
+return (NULL);
+
+newnode = malloc(sizeof(listint_t));
+if (newnode == NULL)
 return (NULL);
 newnode->n = n;
 newnode->next =  current->next;
