@@ -26,7 +26,7 @@ newnode->n = n;
 *head = newnode;
 }
 
-while (newnode != NULL && i < idx)
+while (current != NULL && i < idx)
 {
 if (current == NULL)
 return (NULL);
