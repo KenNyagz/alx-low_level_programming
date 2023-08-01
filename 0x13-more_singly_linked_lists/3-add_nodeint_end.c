@@ -21,12 +21,14 @@ lastnode->next = NULL;
 
 if (*head ==  NULL)
 *head = lastnode;
-
+else
+{
+current = *head;
 while (current->next != NULL)
 {
 current = current->next;
 }
 current->next = lastnode;
-
+}
 return (lastnode);
 }
