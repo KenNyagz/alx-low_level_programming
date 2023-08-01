@@ -20,12 +20,12 @@ free(current);
 return (0);
 }
 
-while (i < (index - 1) && current != NULL)
+while (current != NULL && i < (index - 1))
 {
 current = current->next;
 i++;
 }
-if (current ==  NULL)
+if (current ==  NULL && current->next == NULL)
 return (-1);
 
 nownode = current;
