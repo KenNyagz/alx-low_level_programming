@@ -28,7 +28,7 @@ while (i < (index - 1) && current != NULL)
 current = current->next;
 i++;
 }
-if (current ==  NULL && current->next == NULL)
+if (current ==  NULL)
 return (-1);
 
 nownode = current;
