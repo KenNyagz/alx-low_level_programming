@@ -17,9 +17,12 @@ while (slow != NULL && fast != NULL && fast->next != NULL)
 slow = slow->next;
 fast = fast->next->next;
 
+if (slow == fast)
+break;
+
 printf("[%p] %d\n", (void *)slow->next, slow->n);
 count++;
-
+}
 if (slow == fast)
 {
 printf("->  [%p] %d\n", (void *)fast->next, fast->next->n);
@@ -28,7 +31,6 @@ printf("->  [%p] %d\n", (void *)fast->next->next, fast->next->next->n);
 exit(98);
 }
 
-}
 
 return (count);
 }
