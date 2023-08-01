@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 
 size_t print_listint_safe(const listint_t *head);
@@ -10,8 +11,8 @@ size_t looped_listint_x(const listint_t *head);
 
 size_t looped_listint_x(const listint_t *head)
 {
+const listint_t *slow, *fast;
 size_t count = 1;
-listint_t *slow, *fast;
 
 if (head == NULL || head->next == NULL)
 return (0);
@@ -23,6 +24,7 @@ while (fast)
 {
 	if (slow == fast)
 	{
+		slow = head;
 		while (slow != fast)
 		{
 			count++;
@@ -57,23 +59,22 @@ count = looped_listint_x(head);
 
 if (count == 0)
 {
-while (head != NULL)
-{
-printf("[%p] %d\n", (void *)head, head->n);
-
-head = head->next;
-index++;
-}
+	while (head != NULL)
+	{
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		index++;
+	}
 }
 else
 {
-while (index < count)
-{
-printf("[%p] %d\n", (void *)head, head->n);
-head = head->next;
-index++;
-}
-printf("->[%p] %d\n", (void *)head, head->n);
+	while (index < count)
+	{
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		index++;
+	}
+	printf("->[%p] %d\n", (void *)head, head->n);
 
 }
 
