@@ -17,5 +17,5 @@ nextnode = curr->next;
 free(curr);
 curr = nextnode;
 }
-
+*head = NULL;
 }
