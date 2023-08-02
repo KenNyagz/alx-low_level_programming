@@ -54,7 +54,6 @@ return (0);
 size_t print_listint_safe(const listint_t *head)
 {
 size_t count, index = 0;
-
 count = looped_listint_x(head);
 
 if (count == 0)
@@ -68,6 +67,7 @@ if (count == 0)
 }
 else
 {
+
 	while (index < count)
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
@@ -76,7 +76,8 @@ else
 	}
 	printf("->[%p] %d\n", (void *)head, head->n);
 
-}
+	
 
+}
 return (count);
 }
