@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "lists.h"
 
-size_t print_listint_safe(const listint_t *head);
-size_t looped_listint_x(const listint_t *head);
+/*size_t looped_listint_x(const listint_t *head);*/
+
 /**
 *looped_listint_x - loops list
 *@head: pointer to first element in list
@@ -76,7 +76,7 @@ else
 	}
 	printf("->[%p] %d\n", (void *)head, head->n);
 
-	
+
 
 }
 return (count);
