@@ -27,7 +27,7 @@ while (*b != '\0')
 num = *b - '0';
 rem = num % 2;
 result = (result << 1) | rem;
-b--;
+b++;
 }
 return (result);
 }
