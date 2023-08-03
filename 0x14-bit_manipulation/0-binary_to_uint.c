@@ -15,13 +15,12 @@ return (0);
 
 while (*b != '\0')
 {
-
 if (*b != '1' && *b != '0')
 {
 return (0);
 }
 
-result = (result << 1) + (*b - 0);
+result = (result << 1) + (*b - '0');
 b++;
 }
 return (result);
