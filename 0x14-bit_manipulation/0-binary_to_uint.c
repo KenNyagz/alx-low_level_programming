@@ -15,7 +15,7 @@ if (b == NULL)
 return (0);
 
 while (*b)
-if (*b != '1' || *b != '0')
+if (*b != '1' && *b != '0')
 {
 return (0);
 b++;
