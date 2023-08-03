@@ -9,16 +9,22 @@
 void print_binary(unsigned long int n)
 {
 unsigned int mask = 1 << 31;
-
+short int nonzerobit = 0;
 
 while (mask > 0)
 {
 if (n & mask)
+{
 printf("1");
-
+nonzerobit = 1;
+}
 else
+{
+if (nonzerobit)
 printf("0");
-
+}
 mask >>= 1;
 }
+if (!nonzerobit)
+printf("0");
 }
