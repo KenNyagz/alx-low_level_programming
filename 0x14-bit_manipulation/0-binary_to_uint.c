@@ -18,8 +18,8 @@ while (*b)
 b++;
 
 
-while (*b != '\0')
-b--;
+/*while (*b != '\0')
+b--;*/
 
 b--;
 while (*b != '\0')
