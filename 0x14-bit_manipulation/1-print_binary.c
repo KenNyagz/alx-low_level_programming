@@ -8,7 +8,7 @@
 
 void print_binary(unsigned long int n)
 {
-unsigned int mask = 1 << 31;
+unsigned int mask = 1u << 31;
 short int nonzerobit = 0;
 
 while (mask > 0)
