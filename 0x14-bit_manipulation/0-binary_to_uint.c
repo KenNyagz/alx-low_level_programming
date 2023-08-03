@@ -17,7 +17,7 @@ return (0);
 while (*b)
 b++;
 
-
+b--;
 while (*b != '\0')
 b--;
 
