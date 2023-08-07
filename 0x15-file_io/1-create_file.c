@@ -25,13 +25,19 @@ if (text_content != NULL)
 text_length = 0;
 while (text_content[text_length] != '\0')
 text_length++;
-}
+
 byteswritten = write(fd, text_content, text_length);
 close(fd);
 
-if (byteswritten != (ssize_t)text_length)
-return (-1);
+/*if (byteswritten != (ssize_t)text_length)
+return (-1);*/
 
+if (byteswritten == -1)
+{
+close(fd);
+return (-1);
+}
+}
 else
 close(fd);
 
