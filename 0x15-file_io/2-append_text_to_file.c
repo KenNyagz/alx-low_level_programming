@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*apppend_text_to_file - function that apppends text at the end of a file
+*append_text_to_file - function that apppends text at the end of a file
 *@filename: name of file
 *@text_content: text to be appended to file(Null terminated string)
 *Return: 1 on success, -1 otherwise
