@@ -18,7 +18,10 @@ return (-1);
 
 fd = open(filename, O_WRONLY | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
 if (fd == -1)
+{
+close(fd);
 return (-1);
+}
 
 byteswritten = write(fd, text_content, text_length);
 close(fd);
