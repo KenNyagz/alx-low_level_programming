@@ -29,9 +29,6 @@ text_length++;
 byteswritten = write(fd, text_content, text_length);
 close(fd);
 
-/*if (byteswritten != (ssize_t)text_length)
-return (-1);*/
-
 if (byteswritten == -1)
 {
 close(fd);
