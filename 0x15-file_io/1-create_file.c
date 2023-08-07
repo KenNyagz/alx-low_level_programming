@@ -22,5 +22,6 @@ return (-1);
 if (text_content != NULL)
 fprintf(file, "%s", text_content);
 
+fclose(file);
 return (1);
 }
