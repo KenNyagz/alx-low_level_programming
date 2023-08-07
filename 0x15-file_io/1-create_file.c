@@ -20,7 +20,11 @@ if (file == NULL)
 return (-1);
 
 if (text_content != NULL)
-fprintf(file, "%s", text_content);
+if(fprintf(file, "%s", text_content) < 0)
+{
+fclose(file);
+return (-1);
+}
 
 fclose(file);
 return (1);
