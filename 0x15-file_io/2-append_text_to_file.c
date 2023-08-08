@@ -17,12 +17,12 @@ if (filename == NULL)
 return (-1);
 
 if (text_content == NULL)
-
-/*if (filename == NULL)*/
+{
+if (filename == NULL)
 return (-1);
 else
 return (1);
-
+}
 
 fd = open(filename, O_WRONLY | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
 if (fd == -1)
