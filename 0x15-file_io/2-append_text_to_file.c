@@ -18,7 +18,7 @@ return (-1);
 
 if (text_content == NULL)
 
-if (filename == NULL)
+/*if (filename == NULL)*/
 return (-1);
 else
 return (1);
