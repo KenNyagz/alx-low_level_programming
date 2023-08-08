@@ -33,7 +33,7 @@ return (-1);
 byteswritten = write(fd, text_content, text_length);
 close(fd);
 
-if (byteswritten != (ssize_t)text_length)
+if (byteswritten < (ssize_t)text_length)
 return (-1);
 
 return (1);
