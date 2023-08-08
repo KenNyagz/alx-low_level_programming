@@ -13,13 +13,18 @@ ssize_t byteswritten;
 size_t text_length = strlen(text_content);
 int fd;
 
-if (filename == NULL || text_content == NULL)
+if (filename == NULL)
 return (-1);
+
+if (text_content == NULL)
+{
+if (filename == NULL)
+return (-1);
+}
 
 fd = open(filename, O_WRONLY | O_CREAT | O_APPEND, S_IRUSR | S_IWUSR);
 if (fd == -1)
 {
-
 return (-1);
 }
 
