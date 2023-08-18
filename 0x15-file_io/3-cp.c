@@ -55,12 +55,12 @@ if (bytesread == -1)
 {
 close(sourcefd);
 close(destfd);
-dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 if (close(sourcefd) == -1)
 {
-dprintf(2, "Error: Can't close fd %d\n", sourcefd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", sourcefd);
 exit(100);
 }
 return (0);
