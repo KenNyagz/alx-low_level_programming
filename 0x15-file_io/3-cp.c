@@ -35,8 +35,8 @@ exit(98);
 destfd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 if (destfd == -1)
 {
-close(sourcefd);
 dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
+close(sourcefd);
 exit(99);
 }
 
@@ -45,17 +45,17 @@ while ((bytesread = read(sourcefd, buffer, BUFFERSIZE)) > 0)
 byteswritten = write(destfd, buffer, bytesread);
 if (byteswritten == -1)
 {
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 close(sourcefd);
 close(destfd);
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(99);
 }
 }
 if (bytesread == -1)
 {
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 close(sourcefd);
 close(destfd);
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 if (close(sourcefd) == -1)
