@@ -2,8 +2,6 @@
 #include <errno.h>
 
 #define BUFFERSIZE 1024
-void handleError(int exitcode, const char *errormessage);
-
 /**
 *main - entry point
 *copies contents from one to another
