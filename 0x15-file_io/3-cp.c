@@ -9,10 +9,11 @@ void handleError(int exitcode, const char *errormessage);
 *copies contents from one to another
 *@argc: number of command lined arguments
 *@argv: array containing the arguments
+*Return: 0 (Success)
 */
 
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 int sourcefd, destfd;
 ssize_t bytesread, byteswritten;
@@ -21,13 +22,13 @@ char buffer[BUFFERSIZE];
 
 if (argc != 3)
 {
-dprintf(STDERR_FILENO,"Usage: %s file_from file_to\n", argv[0]);
+dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
 }
 
 sourcefd = open(argv[1], O_RDONLY);
-if(sourcefd == -1)
+if (sourcefd == -1)
 {
-dprintf(STDERR_FILENO,"Error: Can't read form file %s\n", argv[1]);
+dprintf(STDERR_FILENO, "Error: Can't read form file %s\n", argv[1]);
 exit(98);
 }
 
@@ -46,24 +47,22 @@ if (byteswritten == -1)
 {
 close(sourcefd);
 close(destfd);
-handleError(99, strerror(errno));
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+exit(99);
 }
 }
 if (bytesread == -1)
 {
 close(sourcefd);
 close(destfd);
-handleError(98, strerror(errno));
+dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+exit(98);
 }
-
 if (close(sourcefd) == -1)
-handleError(100, strerror(errno));
-
+{
+dprintf(2, "Error: Can't close fd %d\n", sourcefd);
+exit(100);
+}
 return (0);
 }
 
-void handleError(int exitcode, const char *errormessage)
-{
-dprintf(2, "Error: %s\n", errormessage);
-exit(exitcode);
-}
