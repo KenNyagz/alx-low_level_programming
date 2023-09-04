@@ -14,8 +14,7 @@ void close_sourcefd(int sourcefd);
 
 int main(int argc, char *argv[])
 {
-int sourcefd, destfd;
-ssize_t bytesread, byteswritten;
+ssize_t bytesread, byteswritten, sourcefd, destfd;
 char buffer[BUFFERSIZE], *source = argv[1], *dest = argv[2];
 	if (argc != 3)
 	{
@@ -28,7 +27,7 @@ char buffer[BUFFERSIZE], *source = argv[1], *dest = argv[2];
 		dprintf(STDERR_FILENO, "Error: Can't read form file %s\n", source);
 		exit(98);
 	}
-	destfd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	destfd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (destfd == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", dest);
