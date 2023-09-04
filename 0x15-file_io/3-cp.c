@@ -3,7 +3,7 @@
 
 #define BUFFERSIZE 1024
 
-void close_sourcefd(int sourcefd);
+void close_sourcefd(int sourcefd, int destfd);
 /**
 *main - entry point
 *copies contents from one to another
@@ -27,7 +27,8 @@ char buffer[BUFFERSIZE], *source = argv[1], *dest = argv[2];
 		dprintf(STDERR_FILENO, "Error: Can't read form file %s\n", source);
 		exit(98);
 	}
-	destfd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	destfd = open(dest, O_WRONLY | O_CREAT | O_TRUNC,
+S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (destfd == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't write to %s\n", dest);
@@ -53,7 +54,7 @@ char buffer[BUFFERSIZE], *source = argv[1], *dest = argv[2];
 		exit(98);
 	}
 	if (close(sourcefd) == -1 || close(destfd) == -1)
-		close_sourcefd(sourcefd);
+		close_sourcefd(sourcefd, destfd);
 return (0);
 }
 
@@ -62,8 +63,9 @@ return (0);
 *@sourcefd: file descriptor for file to be closed
 *Return: 100
 */
-void close_sourcefd(int sourcefd)
+void close_sourcefd(int sourcefd, int destfd)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", sourcefd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n",
+(sourcefd == -1) ? destfd : sourcefd);
 exit(100);
 }
