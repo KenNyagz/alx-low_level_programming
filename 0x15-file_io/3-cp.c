@@ -64,7 +64,6 @@ return (0);
 */
 void close_sourcefd(int sourcefd, int destfd)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n",
-(sourcefd == -1) ? destfd : sourcefd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (sourcefd == -1) ? destfd : sourcefd);
 exit(100);
 }
