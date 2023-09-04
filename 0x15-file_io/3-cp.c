@@ -16,19 +16,22 @@ int main(int argc, char *argv[])
 {
 int sourcefd, destfd;
 ssize_t bytesread, byteswritten;
-char buffer[BUFFERSIZE];/*char *source = argv[1], *dest = argv[2];*/
+char buffer[BUFFERSIZE], *source = argv[1], *dest = argv[2];
 	if (argc != 3)
+	{
 		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
-	sourcefd = open(argv[1], O_RDONLY);
+		exit(97);
+	}
+	sourcefd = open(source, O_RDONLY);
 	if (sourcefd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read form file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read form file %s\n", source);
 		exit(98);
 	}
-	destfd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	destfd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (destfd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Can't write to %s\n", dest);
 		close(sourcefd);
 		exit(99);
 	}
@@ -37,7 +40,7 @@ char buffer[BUFFERSIZE];/*char *source = argv[1], *dest = argv[2];*/
 		byteswritten = write(destfd, buffer, bytesread);
 		if (byteswritten == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 			close(sourcefd);
 			close(destfd);
 			exit(99);
@@ -45,12 +48,12 @@ char buffer[BUFFERSIZE];/*char *source = argv[1], *dest = argv[2];*/
 	}
 	if (bytesread == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source);
 		close(sourcefd);
 		close(destfd);
 		exit(98);
 	}
-	if (close(sourcefd) == -1)
+	if (close(sourcefd) == -1 || close(destfd) == -1)
 		close_sourcefd(sourcefd);
 return (0);
 }
