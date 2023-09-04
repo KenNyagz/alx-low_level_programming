@@ -60,10 +60,12 @@ return (0);
 /**
 *close_sourcefd - Closes source file and exits at status 100
 *@sourcefd: file descriptor for file to be closed
+*@destfd: another file descriptor for file to be closed
 *Return: 100
 */
 void close_sourcefd(int sourcefd, int destfd)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (sourcefd == -1) ? destfd : sourcefd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n",
+(sourcefd == -1) ? destfd : sourcefd);
 exit(100);
 }
