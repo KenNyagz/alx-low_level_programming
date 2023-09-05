@@ -5,8 +5,9 @@
 #include <elf.h>
 
 void print_elf_info(Elf64_Ehdr *header) {
+int i;
 printf("  Magic:   ");
-for (int i = 0; i < EI_NIDENT; i++) 
+for (i = 0; i < EI_NIDENT; i++) 
 {
 printf("%02x ", header->e_ident[i]);
 }
@@ -80,24 +81,27 @@ printf("Unknown\n");
 break;
 }
 
-printf("  Entry point address:               0x%llx\n", (unsigned long long)header->e_entry);
+printf("  Entry point address:               0x%lu\n", (long unsigned int)header->e_entry);
 }
 
 int main(int argc, char *argv[]) {
+Elf64_Ehdr elf_header;
+const char *filename;
+int fd;
+ssize_t bytes_read;
 if (argc != 2) {
 fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
 exit(98);
 }
 
-const char *filename = argv[1];
-int fd = open(filename, O_RDONLY);
+filename = argv[1];
+fd = open(filename, O_RDONLY);
 if (fd == -1) {
 fprintf(stderr, "Error: Cannot open file '%s'\n", filename);
 exit(98);
 }
 
-Elf64_Ehdr elf_header;
-ssize_t bytes_read = read(fd, &elf_header, sizeof(elf_header));
+bytes_read = read(fd, &elf_header, sizeof(elf_header));
 if (bytes_read != sizeof(elf_header) || elf_header.e_ident[EI_MAG0] != ELFMAG0 ||
 elf_header.e_ident[EI_MAG1] != ELFMAG1 || elf_header.e_ident[EI_MAG2] != ELFMAG2 ||
 elf_header.e_ident[EI_MAG3] != ELFMAG3) {
