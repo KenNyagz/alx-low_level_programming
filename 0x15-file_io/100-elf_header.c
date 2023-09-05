@@ -46,13 +46,13 @@ printf("Magic: ");
 		printf("%02x ", header->e_ident[i]);
 
 	printf("\n");
-	printf("Class: %d\n", header->e_ident[EI_CLASS]);
-	printf("Data: %d\n", header->e_ident[EI_DATA]);
-	printf("Version: %d\n", header->e_ident[EI_VERSION]);
-	printf("OS/ABI: %d\n", header->e_ident[EI_OSABI]);
-	printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
-		printf("Type: %d\n", header->e_type);
-	printf("Entry point address: %lx\n", (unsigned long)header->e_entry);
+	printf("Class:                         %d\n", header->e_ident[EI_CLASS]);
+	printf("Data:                          %d\n", header->e_ident[EI_DATA]);
+	printf("Version:                       %d\n", header->e_ident[EI_VERSION]);
+	printf("OS/ABI:                        %d\n", header->e_ident[EI_OSABI]);
+	printf("ABI Version:                   %d\n", header->e_ident[EI_ABIVERSION]);
+		printf("Type:                         %d\n", header->e_type);
+	printf("Entry point address:          %lx\n", (unsigned long)header->e_entry);
 }
 
 /**
