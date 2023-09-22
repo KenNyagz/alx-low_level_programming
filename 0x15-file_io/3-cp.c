@@ -40,8 +40,8 @@ char buffer[BUFFERSIZE], *source = argv[1], *dest = argv[2];
 		if (byteswritten == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
-			close(sourcefd);
-			close(destfd);
+			/*close(sourcefd);*/
+			/*close(destfd);*/
 			exit(99);
 		}
 	}
