@@ -30,7 +30,7 @@ char buffer[BUFFERSIZE], *source = argv[1], *dest = argv[2];
 	destfd = open(dest, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (destfd == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't write to %s\n", dest);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
 		close(sourcefd);
 		exit(99);
 	}
