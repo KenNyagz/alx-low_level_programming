@@ -15,14 +15,14 @@ unsigned int count = 0;
 
 	if (head == NULL)
 		return (NULL);
-	while (current->next != NULL && count < index)
+	while (current != NULL && count < index)
 	{
 		count++;
 		current = current->next;
 	}
 	if (count == index)
 		return (current);
-	/*if (count > index)
-		return (NULL);*/
+	if (count > index)
+		return (NULL);
 	return (current);
 }
