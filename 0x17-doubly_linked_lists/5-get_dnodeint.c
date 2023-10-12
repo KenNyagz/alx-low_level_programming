@@ -21,7 +21,7 @@ unsigned int count = 0;
 		current = current->next;
 	}
 	if (count++ == index)
-		return (current->next);
+		return (current);
 	if (count > index)
 		return (NULL);
 	return (current);
