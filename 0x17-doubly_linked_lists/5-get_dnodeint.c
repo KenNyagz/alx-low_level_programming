@@ -4,6 +4,7 @@
 *get_dnodeint_at_index - get node at a specific position in at a
 *			specific position in a doubly linked list
 *@head: address of first element in doubly linked list
+*@index: position of node in list to be retrieved
 *Return: node at the specified position
 */
 
@@ -15,6 +16,13 @@ unsigned int count = 0;
 	if (head == NULL)
 		return (NULL);
 	while (current->next != NULL && count < index)
+	{
+		count++;
 		current = current->next;
+	}
+	if (count == n)
+		return (current);
+	if (count > n)
+		return (NULL);
 	return (current);
 }
