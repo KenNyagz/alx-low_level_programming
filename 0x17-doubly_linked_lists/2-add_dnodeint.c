@@ -2,7 +2,7 @@
 
 /**
 *add_dnodeint - adds a new nodeto a doubly linked list
-*@h: pointer to first node of linked list
+*@head: address of pointer to first node of linked list
 *@n: data to be in new node
 *Return: pointer to new node
 */

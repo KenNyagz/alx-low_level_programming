@@ -2,7 +2,7 @@
 
 /**
 *dlistint_len - returns the number of elements in a doubly linked list
-*@h: ponter to first element of list
+*@h: pointer to first element of list
 *Return: Nmber of elements/nodes
 */
 
