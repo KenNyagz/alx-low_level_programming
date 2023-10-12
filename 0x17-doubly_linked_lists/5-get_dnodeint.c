@@ -20,9 +20,9 @@ unsigned int count = 0;
 		count++;
 		current = current->next;
 	}
-	if (count == n)
+	if (count == index)
 		return (current);
-	if (count > n)
+	if (count > index)
 		return (NULL);
 	return (current);
 }
