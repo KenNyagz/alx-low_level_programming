@@ -38,7 +38,7 @@ unsigned int count = 0;
 	}
 	current->prev->next = current->next;
 	if (current->next != NULL)
-	e	current->next->prev = current->prev;
+		current->next->prev = current->prev;
 	current->prev->next = current->next;
 	free(current);
 	return (1);
