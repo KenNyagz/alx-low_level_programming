@@ -24,8 +24,8 @@ unsigned int count =0;
 
 	if (current == NULL)
 		return (1);
-	current->next->prev = current->prev;
-	current->prev->next = current->next;
+	/*current->next->prev = current->prev;
+	current->prev->next = current->next;*/
 	free(current);
 	return (0);
 }
