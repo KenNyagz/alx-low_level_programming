@@ -12,3 +12,5 @@ for i in range(999, 99, -1):
             largest_palindrome = product
 
 print(largest_palindrome)
+with open('102-result', 'w') as file:
+    file.write(str(largest_palindrome))
