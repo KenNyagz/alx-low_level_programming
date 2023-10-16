@@ -1,1 +1,1 @@
-Getting into dynamic linking and libraries.
+Now on Static Libraries
