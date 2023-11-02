@@ -1,0 +1,1 @@
+Now on Static Libraries
