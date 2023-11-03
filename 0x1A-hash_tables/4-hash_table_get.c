@@ -11,7 +11,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned int index = 0;
 
-	index = hash_djb2((const unsigned char *)key);
+	index = hash_djb2((const unsigned char *)key) % ht->size;
 	
 
 	return (ht->array[index]->value);
