@@ -8,7 +8,7 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	/*unsigned int i = 0;*/
+	unsigned int i = 0;
 	hash_table_t *newtable = calloc(size, sizeof(hash_table_t));
 	/*hash_table_t *newtable[size];*/
 
@@ -16,8 +16,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	newtable->size = size;
-	/*for (i = 0; i < size; i++)
-		newtable[i] = NULL;*/
+	for (i = 0; i < size; i++)
+		;/*newtable->array[i] = NULL;*/
 
 	return (newtable);
 }
