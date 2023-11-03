@@ -22,7 +22,10 @@ node->value = strdup(value);
 index = hash_djb2((const unsigned char *)key) % ht->size;
 
 	if (!ht->array[index])
+	{
 		ht->array[index] = node;
+		node->next = NULL;
+	}
 	else
 	{
 		node->next = ht->array[index];
