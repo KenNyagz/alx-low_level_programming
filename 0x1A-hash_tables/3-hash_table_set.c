@@ -12,13 +12,30 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	int index = 0;
 	hash_node_t *node;
 
-	index = (hash_djb2((const unsigned char *)key) % ht->size);
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
+		return (0);
+	index = key_index((const unsigned char *)key, ht->size);
 	node = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-	node->key = (char *)key;
-	node->value = (char *)value;
-
+	node->key = strdup(key);
+	if (node->key == NULL)
+	{
+		free(node);
+		return (0);
+	}
+	if (value != NULL)
+	{
+		node->value = strdup(value);
+		if (node->value == NULL)
+		{
+			free(node->key);
+			free(node);
+			return (0);
+		}
+	else
+		node->value = NULL;
+	}
 	if (!ht->array[index])
 		ht->array[index] = node;
 	else
