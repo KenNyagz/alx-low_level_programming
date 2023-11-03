@@ -34,7 +34,7 @@ if (node->value == NULL)
 }
 index = hash_djb2((const unsigned char *)key) % ht->size;
 
-	if (!ht->array[index])
+	if (!ht->array[index] || strcmp(ht->array[index]->key, key) == 0)
 	{
 		ht->array[index] = node;
 		node->next = NULL;
