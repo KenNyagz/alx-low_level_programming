@@ -12,6 +12,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned int index = 0;
 	hash_node_t *temp = NULL;
 
+	if (ht == NULL || key == NULL)
+		return (NULL);
+
 	index = hash_djb2((const unsigned char *)key) % ht->size;
 	temp = ht->array[index];
 	while (temp != NULL)
