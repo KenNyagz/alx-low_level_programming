@@ -27,7 +27,7 @@ if (node->value == NULL)
 
 index = hash_djb2((const unsigned char *)key) % ht->size;
 
-	if (ht->array[index] != NULL)
+	if (!ht->array[index])
 	{
 		ht->array[index] = node;
 		node->next = NULL;
