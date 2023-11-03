@@ -8,14 +8,16 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-
-	hash_table_t *newtable = malloc(sizeof(hash_table_t));
+	/*unsigned int i = 0;*/
+	hash_table_t *newtable = calloc(size, sizeof(hash_table_t));
+	/*hash_table_t *newtable[size];*/
 
 	if (newtable == NULL)
 		return (NULL);
 
 	newtable->size = size;
-
+	/*for (i = 0; i < size; i++)
+		newtable[i] = NULL;*/
 
 	return (newtable);
 }
