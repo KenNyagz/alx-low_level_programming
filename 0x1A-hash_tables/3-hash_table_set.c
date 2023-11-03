@@ -36,12 +36,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 		node->value = NULL;
 	}
-	if (!ht->array[index])
-		ht->array[index] = node;
-	else
-	{
-		node->next = ht->array[index];
-		ht->array[index] = node;
-	}
+
+	node->next = ht->array[index];
+	ht->array[index] = node;
+
 	return (1);
 }
