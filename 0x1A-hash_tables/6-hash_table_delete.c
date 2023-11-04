@@ -28,14 +28,16 @@ void hash_table_delete(hash_table_t *ht)
 			current = temp[i];
 			while (current != NULL)
 			{
-				current2 = current->next;
 				free(current->key);
 				free(current->value);
+				current2 = current->next;
 				free(current);
 				current = current2;
 			}
 		}
 	}
 	free(ht->array);
+	ht->array = NULL;
+	ht->size = 0;
 	free(ht);
 }
