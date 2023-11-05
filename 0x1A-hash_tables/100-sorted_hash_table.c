@@ -23,11 +23,11 @@ shash_table_t *shash_table_create(unsigned long int size)
 		return (NULL);
 	}
 
-	newtable->shead = NULL;
-	newtable->stail = NULL;
-
 	for (i = 0; i < size; i++)
 		newtable->array[i] = NULL;
+
+	newtable->shead = NULL;
+	newtable->stail = NULL;
 	return (newtable);
 
 }
@@ -65,7 +65,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	index = hash_djb2((const unsigned char *)key) % ht->size;
-	node->next = ht->array[index];
+
 	ht->array[index] = node;
 
 	if (ht->shead == NULL)
@@ -89,10 +89,18 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		{
 			node->snext = current;
 			node->sprev = prev;
-			prev->next = node;
+			ht->shead = node;
 		}
 		else
-			ht->stail = node;
+		{
+			node->snext = current;
+			node->sprev = prev;
+			prev->snext = node;
+		}
+		if (current != NULL)
+			current->sprev = node;
+		else
+			ht->stail = node;	
 	}
 	return (1);
 }
