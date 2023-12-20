@@ -1,6 +1,6 @@
 CC = gcc
 SRC = main.c school.c
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=%.o)
 NAME = school
 RM = rm -f
 .PHONY = all clean fclean oclean re
@@ -10,7 +10,7 @@ all: $(NAME)
 
 # Rule to build executable
 $(NAME): $(OBJ)
-	$(CC) $^ -o $@
+	$(CC) $< -o $@
 
 clean:
 	$(RM) *~, *.swp, $(NAME)
