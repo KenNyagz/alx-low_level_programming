@@ -1,2 +1,2 @@
-school: main.c school.c m.h
-	gcc $^ -o $@
+all: main.c school.c m.h
+	gcc $^ -o school
