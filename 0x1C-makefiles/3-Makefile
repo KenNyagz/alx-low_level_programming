@@ -6,11 +6,11 @@ RM = rm -f
 .PHONY = all clean fclean oclean re
 
 
-all: $(NAME)
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
-# Rule to build executable
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $@
+#$(NAME): $(OBJ)
+#	$(CC) $(OBJ) -o $@
 
 clean:
 	$(RM) *~, *.swp, $(NAME)
