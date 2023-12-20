@@ -7,6 +7,7 @@ RM = rm -f
 
 all: $(NAME)
 
+# Rule to build executable
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@
 
@@ -18,7 +19,7 @@ oclean:
 
 fclean: clean oclean
 
-re: clean all
+re: fclean all
 
 %.o: %.c
-	$(CC) $^ -c
+	$(CC) $< -c
