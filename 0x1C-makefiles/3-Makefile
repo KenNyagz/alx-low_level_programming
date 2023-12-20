@@ -10,7 +10,7 @@ all: $(NAME)
 
 # Rule to build executable
 $(NAME): $(OBJ)
-	$(CC) $< -o $@
+	$(CC) $(OBJ) -o $@
 
 clean:
 	$(RM) *~, *.swp, $(NAME)
@@ -23,4 +23,4 @@ fclean: clean oclean
 re: fclean all
 
 %.o: %.c
-	$(CC) $< -c
+	$(CC) -c $<
