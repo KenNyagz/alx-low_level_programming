@@ -1,0 +1,2 @@
+school.o: main.c school.c m.h
+	gcc $^ -o $@
